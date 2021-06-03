@@ -7,7 +7,8 @@ COPY ./package.json /usr/src/app/
 
 RUN npm install -g npm@7.15.1
 RUN npm i
-RUN npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+RUN npm uninstall postcss
+RUN npm install postcss --save-dev
 
 COPY . /usr/src/app/
 EXPOSE 3000
